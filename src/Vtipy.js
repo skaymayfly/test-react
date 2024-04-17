@@ -6,7 +6,7 @@ import Typography from '@mui/material/Typography';
 
 
 
-function App() {
+function App(props) {
     
 
 
@@ -26,7 +26,7 @@ function App() {
 
     return (
         <>  
-        <Typography variant="button" fontSize={40}>VTIPY</Typography> <br></br>
+        <Typography variant="button" fontSize={40} textAlign={"center"} margin={105}>VTIPY</Typography> <br></br>
            {vybranyVtip != "" && <Typography variant="button" fontSize={20}>Vybraný vtip je: {vybranyVtip}</Typography>} <br></br>
             <Grid container spacing={1}>
                 {vtipy.map(vtip => (
@@ -36,9 +36,11 @@ function App() {
 
 
                         <Grid item xs={4} key={vtip.type} style={{ listStyle: "none" }}>
-                            <Paper elevation={4} onClick={() => nastavVybranyVtip(vtip.setup + vtip.punchline)} style={{textAlign: "center"}}>
+                            <Paper elevation={4} onClick={() => nastavVybranyVtip(vtip.setup + (" ") + vtip.punchline)} style={{textAlign: "center"}}>
+                                <Typography variant="button">{vtip.type}</Typography> <br></br>
                             <Typography variant="overline">{vtip.setup}</Typography> <br></br>
                                 <Typography variant="overline">{vtip.punchline}</Typography>
+
                                 </Paper>
                         </Grid>
 

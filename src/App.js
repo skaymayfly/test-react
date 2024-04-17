@@ -16,7 +16,7 @@ export default function App() {
     return (
         <HashRouter>
             <Layout vybranyVtip={vybranyVtip}/>
-            <Routes>
+            <Routes >
                     <Route index element={<Home />} />
                     <Route path="/vtipy" element={<Vtipy vybranyVtip={vybranyVtip} nastavVybranyVtip={nastavVybranyVtip} />} />
                     <Route path="*" element={<NoPage />} />
